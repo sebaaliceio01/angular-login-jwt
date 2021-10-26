@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './modules/pages/components/admin/admin.component';
 import { PagesComponent } from './modules/pages/components/pages/pages.component';
 
 const routes: Routes = [
-  { path: '', component: PagesComponent }
+  { path: '', component: PagesComponent },
+  { path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({

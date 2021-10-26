@@ -1,22 +1,26 @@
 <div class="container">
+  {{ isAdmin }} - Role
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <div class="title">
         <span>JWT Auth</span>
-        <button
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with menu icon"
-        >
-          <mat-icon>menu</mat-icon>
-        </button>
+        <ng-template #viewAdmin>
+          <button (click)="onToggleSidenav()"
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+        </ng-template>
+        <ng-container *ngIf="!isAdmin; else viewAdmin"></ng-container>
       </div>
       <div class="buttons">
         <button mat-button [routerLink]="'admin'">Admin</button>
         <button mat-button [routerLink]="'login'">Login</button>
         <button mat-button>Logout</button>
-    </div>
+        <button mat-button (click)="isAdmin = !isAdmin">Change</button>
+      </div>
     </mat-toolbar-row>
-    </mat-toolbar
-  >
+  </mat-toolbar>
 </div>
