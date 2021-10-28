@@ -9,6 +9,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AuthenticationModule,
     MatSidenavModule,
     MatToolbarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

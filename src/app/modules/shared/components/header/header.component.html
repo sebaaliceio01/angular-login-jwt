@@ -1,5 +1,4 @@
 <div class="container">
-  {{ isAdmin }} - Role
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <div class="title">
@@ -13,13 +12,14 @@
             <mat-icon>menu</mat-icon>
           </button>
         </ng-template>
+        <ng-template #viewLogout>
+          <button mat-button (click)="logout()" *ngIf="authService.IsLogged | async">Logout</button>
+        </ng-template>
         <ng-container *ngIf="!isAdmin; else viewAdmin"></ng-container>
       </div>
       <div class="buttons">
-        <button mat-button [routerLink]="'admin'">Admin</button>
-        <button mat-button [routerLink]="'login'">Login</button>
-        <button mat-button>Logout</button>
-        <button mat-button (click)="isAdmin = !isAdmin">Change</button>
+        <button mat-button [routerLink]="'admin'" *ngIf="authService.IsLogged | async">Admin</button>
+        <button mat-button (click)="logout()" *ngIf="authService.IsLogged | async">Logout</button>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

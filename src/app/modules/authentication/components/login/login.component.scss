@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+  .login-form {
+      padding: 25px;
+    mat-card {
+      mat-card-content {
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
