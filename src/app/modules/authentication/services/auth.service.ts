@@ -15,6 +15,7 @@ export class AuthService {
 
   private loggedIn = new BehaviorSubject<boolean>(false)
   private role = new BehaviorSubject<Role | null>(null)
+ 
   helper = new JwtHelperService()
 
   constructor(
